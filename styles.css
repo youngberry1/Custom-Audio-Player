@@ -1,0 +1,53 @@
+body {
+   font-family: sans-serif;
+   padding: 20px;
+}
+
+#controls {
+   justify-content: center;
+   gap: 1rem;
+   margin-top: 1.5rem;
+   padding: 1rem;
+   background: linear-gradient(135deg, #1f1f1f, #2a2a72);
+   border-radius: 12px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+   animation: fadeIn 1s ease-in-out;
+}
+
+button {
+   padding: 0.8rem 1.4rem;
+   font-size: 1rem;
+   color: white;
+   background: #4c00ff;
+   border: none;
+   border-radius: 8px;
+   transition: background 0.3s ease, transform 0.2s ease;
+   cursor: pointer;
+   font-weight: bold;
+}
+
+button:hover {
+   background: #7200ff;
+   transform: scale(1.05);
+}
+
+button:focus {
+   outline: 2px solid #fff;
+   outline-offset: 4px;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(30px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+audio {
+   width: 100%;
+   margin-top: 1rem;
+}

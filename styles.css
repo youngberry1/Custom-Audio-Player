@@ -50,6 +50,7 @@ audio {
    max-width: 600px;
    margin: 1rem auto 0;
    background-color: transparent;
+   z-index: 1000;
 }
 
 /* Fade-in animation for smooth entrance */

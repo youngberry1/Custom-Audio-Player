@@ -1,10 +1,4 @@
-body {
-   font-family: sans-serif;
-   padding: 20px;
-   /* Responsive padding */
-   padding: clamp(10px, 4vw, 20px);
-}
-
+/* Container styling for the controls */
 #controls {
    display: flex;
    flex-wrap: wrap;
@@ -17,19 +11,14 @@ body {
    border-radius: 12px;
    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
    animation: fadeIn 1s ease-in-out;
-
-   /* Responsive adjustments */
-   max-width: 100%;
+   max-width: 90vw;
    margin-left: auto;
    margin-right: auto;
-
-   /* Mobile-first responsive design */
-   gap: clamp(0.5rem, 2vw, 1rem);
-   padding: clamp(0.75rem, 3vw, 1rem);
-   margin-top: clamp(1rem, 3vw, 1.5rem);
 }
 
+/* Buttons */
 button {
+   flex: 1 1 120px;
    padding: 0.8rem 1.4rem;
    font-size: 1rem;
    color: white;
@@ -39,15 +28,7 @@ button {
    transition: background 0.3s ease, transform 0.2s ease;
    cursor: pointer;
    font-weight: bold;
-
-   /* Responsive button sizing */
-   padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 3vw, 1.4rem);
-   font-size: clamp(0.875rem, 2.5vw, 1rem);
-   min-width: 44px; /* Minimum touch target size */
-   min-height: 44px;
-
-   /* Ensure buttons don't shrink too much */
-   flex-shrink: 0;
+   min-width: 100px;
 }
 
 button:hover {
@@ -60,29 +41,17 @@ button:focus {
    outline-offset: 4px;
 }
 
-/* Reduce hover effects on touch devices */
-@media (hover: none) and (pointer: coarse) {
-   button:hover {
-      background: #4c00ff;
-      transform: none;
-   }
-
-   button:active {
-      background: #7200ff;
-      transform: scale(0.98);
-   }
-}
-
-#controls audio {
+/* Audio Player Styling */
+audio {
    width: 100%;
-   max-width: 100%;
-   margin-bottom: 1rem;
-   margin-bottom: clamp(0.75rem, 2vw, 1rem);
-   height: auto;
-   order: -1; /* Ensures audio appears first in flex layout */
-   flex-basis: 100%; /* Takes full width in flex container */
+   max-width: 600px;
+   margin: 1rem auto 0;
+   display: block;
+   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+   border-radius: 6px;
 }
 
+/* Fade-in animation for smooth entrance */
 @keyframes fadeIn {
    from {
       opacity: 0;
@@ -94,82 +63,15 @@ button:focus {
    }
 }
 
-/* Tablet styles */
-@media screen and (min-width: 768px) {
-   #controls {
-      max-width: 90%;
-      padding: 1.25rem;
-   }
-
+/* Responsive Design for Mobile & Tablets */
+@media (max-width: 600px) {
    button {
-      font-size: 1rem;
-      padding: 0.8rem 1.4rem;
-   }
-}
-
-/* Desktop styles */
-@media screen and (min-width: 1024px) {
-   body {
-      padding: 20px;
+      flex: 1 1 100%;
+      font-size: 0.95rem;
    }
 
    #controls {
-      max-width: 800px;
-      padding: 1.5rem;
-      gap: 1.2rem;
-   }
-
-   button {
-      font-size: 1.1rem;
-      padding: 0.9rem 1.6rem;
-   }
-}
-
-/* Large desktop styles */
-@media screen and (min-width: 1440px) {
-   #controls {
-      max-width: 1000px;
-      padding: 2rem;
-      gap: 1.5rem;
-   }
-}
-
-/* Small mobile devices */
-@media screen and (max-width: 480px) {
-   body {
-      padding: 10px;
-   }
-
-   #controls {
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 1rem;
-      margin-top: 1rem;
-   }
-
-   #controls audio {
-      margin-bottom: 1rem;
-      width: 100%;
-   }
-
-   button {
-      width: 100%;
-      max-width: 280px;
-      font-size: 0.9rem;
-      padding: 0.75rem 1rem;
-   }
-}
-
-/* Very small devices */
-@media screen and (max-width: 320px) {
-   button {
-      font-size: 0.875rem;
-      padding: 0.7rem 0.9rem;
-      max-width: 100%;
-   }
-
-   #controls {
-      padding: 0.75rem;
-      gap: 0.5rem;
+      padding: 0.8rem;
+      gap: 0.8rem;
    }
 }
